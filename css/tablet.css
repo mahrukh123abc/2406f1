@@ -1,0 +1,13 @@
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    button.navbar-toggler.collapsed {
+        background: #eee;
+    }
+    button.navbar-toggler {
+        background: #eee;
+    }
+    input#searchProduct {
+        width: 100% !important;
+        margin-left: 1rem;
+    }
+}
