@@ -1,13 +1,11 @@
 
-
-
 .custom-paragraph {
-    font-family: 'Dancing Script', cursive; /* Dancing Script font */
-    font-size: 30px; /* Font size */
+    font-family: 'roboto', cursive; /* Dancing Script font */
+    font-size: 20px; /* Font size */
     font-weight: normal; /* Font weight */
-    color: #333; /* Text color */
-    text-shadow: 1px 1px 2px gray; /* Shadow effect */
-    background-color: #f0f8ff; /* Light background */
+    color: #221b1b; /* Text color */
+    text-shadow: 1px 1px 2px rgb(83, 35, 35); /* Shadow effect */
+    background-color: #b6a9a4; /* Light background */
     padding: 5px; /* Space around text */
     border-radius: 5px; /* Rounded corners */
     line-height: 1.5; /* Line height */
@@ -18,16 +16,15 @@
             font-family: 'Roboto', sans-serif; /* Roboto font */
     font-size: 36px;
     font-weight: bold;
-    color: #e2e7ec;
+    color: rgb(83, 35, 35);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    background-color: #795548;
+    background-color: #b6a9a4;
     padding: 15px;
     border-radius: 8px;
     text-align: center;
-    border-bottom: 2px solid #2980b9;
+   
     margin-bottom: 20px;
 }
-
 
 
 .product-img img{
@@ -81,7 +78,7 @@
     position: relative;
 }
 .product-content{
-    background:  #795548;
+    background:  #b6a9a4;
     padding: 3rem 0.5rem 2rem 0.5rem;
     cursor: pointer;
 }
@@ -166,7 +163,7 @@
     opacity: 3;
 }
 .off-info .sm-title{
-    background: var(--carribean-green);
+    background: rgb(107, 66, 66);
     color: white;
     display: inline-block;
     padding: 0.5rem;

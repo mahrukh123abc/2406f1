@@ -28,7 +28,7 @@
       background: url('/images/ai-generated-8927312.jpg') no-repeat center center;
       background-size: cover;
       height: 60vh;
-      color: #5C4242;
+      color: #523c3c;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -37,21 +37,28 @@
       padding-top: 0px;
 
     }
+   
+    .my-nav .navbar-nav .nav-link {
+        color: #ecd7d7; /* Change this to your desired text color */
+    }
+     
+
+
     .nav-item a,.nav-item.active a{
       /* border-radius: 10px; */
       transition: .3s ease-in-out;
       color: #eee;
       letter-spacing: 1px;
-      filter: drop-shadow(0px 1px 4px #eee);
+    
 
     }
     .nav-item a:hover{
       color: #fff;
-      /* background-color: rgb(48, 143, 221); */
-     /* border-radius: 10px; */
+       background-color: rgb(69, 96, 117); 
+      border-radius: 10px; 
      letter-spacing: 2px;
      border: none;
-     border-bottom: 1px solid #fff;
+   
     }
     .nav-item a.active:hover {
         color: #fff;
@@ -59,12 +66,12 @@
        /* border-radius: 10px; */
       }
 
-    .nav-item .nav-link.active{
-        color: #fff;
+    /* .nav-item .nav-link.active{
+        color: #b99a9a;
        letter-spacing: 2px;
        border: none;
        border-bottom: 1px solid #fff;
-      }
+      } */
     .navbar-brand{
       font-family: sans-serif;
       font-size: 2rem;
@@ -224,6 +231,7 @@ button.cs-btn {
     font-size: 14px;
 }
 
+
 .footer {
     padding: 30px 15px;
     background-color: rgb(198, 198, 153);
@@ -299,21 +307,32 @@ p.details-para {
      
     }
     .my-nav{
-        background-color: #5c4242; 
+        background-color: #082330; 
     }
 
+    .wave-top {
+        position: relative;
+        height: 100px; /* Adjust height as needed */
+        background: #082330; /* Same color as your footer */
+        clip-path: polygon(0 100%, 50% 0%, 100% 100%);
+        z-index: 1;
+      }
+      
+      footer {
+        position: relative;
+        z-index: 2; /* Ensures footer content is above the wave */
+      }
+      
     .footer_top_holder,	footer #lang_sel > ul > li > a,	footer #lang_sel_click > ul > li > a{
-		background-color: #5c4242;
+		background-color: #082330;
 	}
 	footer #lang_sel ul ul a,footer #lang_sel_click ul ul a,footer #lang_sel ul ul a:visited,footer #lang_sel_click ul ul a:visited{
 		background-color: #5c4242;
 	}
-
     .footer_top,
     .footer_top.footer_top_full{
      padding-top: 96px;padding-bottom: 70px 
  }
-
 .footer_top .column_inner > div h2,
 .footer_top .column_inner > div h3,
 .footer_top .column_inner > div h4,
@@ -350,9 +369,6 @@ p.details-para {
 	.footer_bottom_holder, #lang_sel_footer{
 		background-color:#333;
 	}
-
-
-
 	.footer_bottom_holder{
 	padding-bottom: 4px	}
 	.footer_bottom{
@@ -401,7 +417,6 @@ p.details-para {
 
 	.footer_top h5 {
 font-family: "Roboto", sans-serif;font-size: 20px;letter-spacing: 0.2px;line-height: 27px;font-weight: 300;text-transform: capitalize;color: #ffffff;font-style: normal	}
-
 	.footer_top,
 	.footer_top p,
 	.footer_top span:not(.q_social_icon_holder):not(.fa-stack):not(.qode_icon_shortcode):not(.qode_icon_font_elegant),
@@ -409,19 +424,14 @@ font-family: "Roboto", sans-serif;font-size: 20px;letter-spacing: 0.2px;line-hei
 	.footer_top .textwidget,
 	.footer_top .widget_recent_entries>ul>li>span{
 	font-family: "Roboto", sans-serif;font-size: 14px;letter-spacing: 0.5px;line-height: 22px;font-weight: 300;text-transform: uppercase;font-style: normal	}
-
 	.footer_top a {
 font-family: "Roboto", sans-serif;font-size: 14px;letter-spacing: 0.5px;line-height: 12px;font-weight: 300;text-transform: uppercase;font-style: normal	}
-
-
     .footer_bottom_holder,
     .footer_bottom,
     .footer_bottom p,
     .footer_bottom_holder p,
     .footer_bottom span:not(.q_social_icon_holder):not(.fa-stack):not(.qode_icon_font_elegant){
 	font-family: "Roboto", sans-serif;font-size: 14px;letter-spacing: 0.2px;line-height: 23px;font-weight: 300;text-transform: none;font-style: normal	}
-
-
 .footer_bottom, .footer_bottom span, .footer_bottom p, .footer_bottom p a, .footer_bottom a, #lang_sel_footer ul li a,
 footer #lang_sel > ul > li > a,
 footer #lang_sel_click > ul > li > a,
