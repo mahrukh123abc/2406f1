@@ -30,15 +30,17 @@
 
 <body>
   <style>
+    
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Arial', sans-serif;
+      position: relative;
     }
 
     body {
-      background: #092a46;
+      background: #40505e;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -60,8 +62,149 @@
       text-align: center;
       font-style: italic;
     }
+    
+ .drop{
+  padding: 0;
+  list-style: none;
+  display: inline-block;
+  margin-left: 80%;
+  position: relative;
+  
+}
+.arrow {
+            margin-left: 5px;
+            cursor: pointer;
+        }
+.drop > li{
+  display: inline-block;
+  position: relative;
+}
+.drop > li > a{
+  text-decoration: none;
+  display: block;
+  background: #7284a0;
+  color: #ecdddd;
+  padding: 10px 10px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.dropdown {
+  background-color: #588ba3;
+  width: 95%;
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-left: 5px;
+            list-style: none;
+            padding: 10px 10px;
+            background: #7c8cb8;
+           color: wheat;
+        
+            z-index: 1;
+
+        }
+        .dropdown:hover{
+background-color: #b87e7e;
+transition: 3s;
+        }
 
 
+        .dropdown li {
+            border-bottom: 1px solid #ccc;
+            color: #ccc;
+
+        }
+        .dropdown li:last-child {
+            border-bottom: 1px solid;
+        }
+        .dropdown li a {
+            padding: 10px;
+            display: block;
+            text-decoration: none;
+            color: #d6ebf5;
+        }
+        .dropdown li a:hover {
+            background: #222d4d;
+        }
+        .drop:hover .dropdown {
+    display: block; /* Show the dropdown on hover */
+}
+
+        .dropdown.show {
+    display: block; /* Show the dropdown when active */
+}
+
+            .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .card {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 15px;
+        width: 150px;
+        text-align: center;
+        overflow: hidden; /* Hide overflow */
+            transition: transform 0.5s; /* Animation effect on hover */
+            cursor: pointer; /* Change cursor to pointer */
+
+    }
+    .card img {
+        max-width: 100%;
+        height: auto;
+    }
+
+
+        .full-img {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+        }
+        .full-img img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .full-img span {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .img-gallery img {
+            width: 100px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        .dropdown {
+            display: none;
+            list-style-type: none;
+        }
+        .drop:hover .dropdown {
+            display: block;
+        }
+        .card img {
+            width: 100%; /* Make image fill the card */
+            height: auto; /* Keep aspect ratio */
+            display: block; /* Remove bottom space */
+        }
+        .card:hover {
+            transform: scale(1.10); /* Slightly enlarge card on hover */
+        }
+
+        .card.active {
+            background-color: #3b757c; /* Light cyan background for active cards */
+        }
 
     .img-gallery {
       width: 80%;
@@ -70,6 +213,7 @@
       grid-template-columns: repeat(5, 1fr);
       /* Change this line */
       grid-gap: 20px;
+      margin-top: 200px;
     }
 
     .img-gallery img {
@@ -99,14 +243,12 @@
       justify-content: center;
       z-index: 100;
     }
-
     .full-img img {
       width: 60%;
       max-width: 400px;
       border-radius: 10px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
-
     .full-img span {
       position: absolute;
       top: 20px;
@@ -116,16 +258,18 @@
       cursor: pointer;
       transition: color 0.3s;
     }
-
     .full-img span:hover {
       color: #ff5c5c;
     }
+    #gallery-title{
+      color: rgb(247, 240, 231);
+font-weight: 600;   
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
   </style>
   </head>
-
   <body>
     <!-- navbar -->
-
     <section>
       <nav class="navbar navbar-expand-lg navbar-light py-0 my-nav">
         <div class="container d-flex">
@@ -159,21 +303,46 @@
           </div>
         </div>
       </nav>
-
       <h1>Image Gallery</h1>
-      <p class="subheading">Explore a collection of beautiful images.<br><br>
-      <p class="subheading">"PET bottles: Lightweight, clear, and eco-friendly—perfect for keeping your favorite drinks
-        fresh while protecting our planet!"
-        <br>" Your eco-friendly companion for freshness and flavor, designed to make a positive impact on our planet!"
-
-
+      <p class="subheading">
+          Explore a collection of beautiful images.
       </p>
+      <p class="subheading">
+          "PET bottles: Lightweight, clear, and eco-friendly—perfect for keeping your favorite drinks fresh while protecting our planet!"
+          <br>"Your eco-friendly companion for freshness and flavor, designed to make a positive impact on our planet!"
+      </p>
+      <ul class="drop">
+        <li>
+            <a href="#" class="dropdown-toggle">Dropdown Menu<span class="arrow">▼</span></a>
+            <ul class="dropdown" style="display: none;">
+                <li><a href="#" onclick="showImages('plastic')">Plastic Bottles</a></li>
+                <li><a href="#" onclick="showImages('glass')">Glass Bottles</a></li>
+                <li><a href="#" onclick="showImages('acrylic')">Acrylic Bottles</a></li>
+                <li><a href="#" onclick="showImages('chemical')">Chemical Bottles</a></li>
+            </ul>
+        </li>
+    </ul>
+    
+    <script>
+        // Select the dropdown toggle
+        const dropdownToggle = document.querySelector('.dropdown-toggle');
+    
+        // Add event listener to the arrow for dropdown toggling
+        dropdownToggle.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            const dropdown = this.nextElementSibling; // Get the corresponding dropdown
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block'; // Toggle dropdown
+        });
+</script>
+    </script>
+      <!-- stop -->
+      <h2 id="gallery-title"></h2> <!-- Added heading for the bottle type -->
       <div class="full-img" id="fullimgbox">
         <img src="images/13e0e4ab181e3e169dceb0a0660c9034.jpg" id="fullimg">
         <span onclick="closefullimg()">&#10005;</span>
 
       </div>
-      <div class="img-gallery">
+      <div class="img-gallery"  id="img-gallery">
         <img src="/images/0585bc956019c0d56766ecabcaec12ef.jpg" onclick="openFullImg(this.src)">
         <img src="/images/45495d4d84dd5b7520380911fc1716d2.jpg" onclick="openFullImg(this.src)">
         <img src="/images/49a034026e86c558362ec39c5ff18a36.jpg" onclick="openFullImg(this.src)">
@@ -194,12 +363,106 @@
         <img src="/images/6129dbce8dcb212a462c709f661fa07c.jpg" onclick="openFullImg(this.src)">
         <img src="/images/3dec94451e6d23aaf30e02a8b2daee42.jpg" onclick="openFullImg(this.src)">
         <img src="/images/ae0fd3f40c3750a5284782a959427437.jpg" onclick="openFullImg(this.src)">
-      </div>
+        <img src="/images/52e52fdd53a6fadd02f9581652d7f8b2.jpg" onclick="openFullImg(this.src)">
+        <img src="/images/1305f5c8009d0854966c841ffdbfe994.jpg" onclick="openFullImg(this.src)">
+        <img src="/images/ed01e01aa5f128a0fa621135d1b1fc8d.jpg" onclick="openFullImg(this.src)">
+        <img src="/images/3d57b637ff76b0d14fc0a5689a8ddce6.jpg" onclick="openFullImg(this.src)">
+        <img src="/images/123ecf226e5dc4b67073aa19ba195390.jpg" onclick="openFullImg(this.src)">
+        <img src="/images/2a60458ae8d450938cf3905ca43c33d7.jpg" onclick="openFullImg(this.src)">
+        <img src="/images/aec82c7fc0afa139bb6050daa9f533dd.jpg" onclick="openFullImg(this.src)">
+        <img src="/images/6d5a3e4d9063b99240141d11a5372943.jpg" onclick="openFullImg(this.src)">
+        <img src="/images/08a0d64728992668e29c178b8cdb383a.jpg" onclick="openFullImg(this.src)">
+        <img src="/images/2924cc64cc7f581e1ddeb9ea5f2e698e.jpg" onclick="openFullImg(this.src)">
+        <img src="/images/f970834c63d032eba0630734cd066732.jpg" onclick="openFullImg(this.src)">
+        <img src="/images/448257f201900c6b599754a2f85c3190.jpg" onclick="openFullImg(this.src)">
+        <img src="/images/a51513530bd3e98692072a02586eee43.jpg" onclick="openFullImg(this.src)">
+        <img src="/images/5d86772750d5f1fb107278e817d24d69.jpg" onclick="openFullImg(this.src)">
+        <img src="/images/d0ccf32adbf270ec896e55f4eb52a3d6.jpg" onclick="openFullImg(this.src)">
 
+      </div>
+      <script>
+        const images = {
+          glass: [
+                "/images/0585bc956019c0d56766ecabcaec12ef.jpg",
+                "/images/45495d4d84dd5b7520380911fc1716d2.jpg",
+                "/images/49a034026e86c558362ec39c5ff18a36.jpg",
+                "/images/c47d8e65ba6fb2900b61175884b59cce.jpg",
+                "/images/7f8828332df5d96666a537a5982c2224.jpg",
+                 "/images/ba2853aedf2377d879eb5e0438795649.jpg"
+            ],
+             plastic :[
+                "/images/2a60458ae8d450938cf3905ca43c33d7.jpg",
+                "/images/fc33c989b28de11fbab34494db21339f.jpg", 
+                "/images/d0da948760541a4f8498bfb8dd34df2f.jpg",
+                "/images/08a0d64728992668e29c178b8cdb383a.jpg",
+                "/images/6123516b22835b987e3809fd9f3ef1d8.jpg"
+            ],
+            acrylic: [
+            "/images/f970834c63d032eba0630734cd066732.jpg", 
+        "/images/448257f201900c6b599754a2f85c3190.jpg",
+        "/images/a51513530bd3e98692072a02586eee43.jpg",
+        "/images/5d86772750d5f1fb107278e817d24d69.jpg",
+        "/images/d0ccf32adbf270ec896e55f4eb52a3d6.jpg", 
+        ],
+        chemical :[
+        "/images/1305f5c8009d0854966c841ffdbfe994.jpg",
+        "/images/ed01e01aa5f128a0fa621135d1b1fc8d.jpg",
+        "/images/3d57b637ff76b0d14fc0a5689a8ddce6.jpg",
+        "/images/123ecf226e5dc4b67073aa19ba195390.jpg",
+      "/images/52e52fdd53a6fadd02f9581652d7f8b2.jpg"
+        ]
+    };
+    function showImages(type) {
+        const gallery = document.getElementById("img-gallery");
+        const galleryTitle = document.getElementById("gallery-title"); // Get the heading element
+        gallery.innerHTML = ""; // Clear previous images
+         // Set the title based on the selected type
+         switch (type) {
+            case 'plastic':
+                galleryTitle.textContent = "Plastic Bottles :";
+                break;
+            case 'glass':
+                galleryTitle.textContent = "Glass Bottles :";
+                break;
+            case 'acrylic':
+                galleryTitle.textContent = "Acrylic Bottles :";
+                break;
+            case 'chemical':
+                galleryTitle.textContent = "Chemical Bottles :";
+                break;
+            default:
+                galleryTitle.textContent = "";
+                break;
+        }
+
+        images[type].forEach(src => {
+          const card = document.createElement("div");
+          card.className = "card active";
+
+
+            const img = document.createElement("img");
+            img.src = src;
+            img.onclick = () => openFullImg(src);
+            card.appendChild(img);
+            gallery.appendChild(card);
+        });
+    }
+    function openFullImg(src) {
+        const fullImgBox = document.getElementById("fullimgbox");
+        const fullImg = document.getElementById("fullimg");
+        fullImg.src = src;
+        fullImgBox.style.display = "flex";
+    }
+    function closeFullImg() {
+        const fullImgBox = document.getElementById("fullimgbox");
+        fullImgBox.style.display = "none";
+    }
+    
+    
+</script>
       <script>
         var fullimgbox = document.getElementById("fullimgbox");
         var fullimg = document.getElementById("fullimg");
-
         function openFullImg(pic) {
           fullimgbox.style.display = "flex";
           fullimg.src = pic;
@@ -209,7 +472,6 @@
         }
       </script>
           <div class="wave-top"></div>
-
           <footer>
             <div class="footer_inner clearfix">
               <div class="footer_top_holder">
